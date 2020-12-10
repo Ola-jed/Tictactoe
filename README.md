@@ -3,7 +3,8 @@
 Il s'agit d'une verion CLI (Command Line Interface) codée en langage C++ disposant de deux modes de jeu :
 - Un mode deux joueurs
 - Un mode un joueur où l'utilisateur affronte une IA  
-Le système cmake est utilisé. Pour compiler le programme, exécutez les commandes suivantes.
+Le système cmake est utilisé. Pour compiler le programme, exécutez les commandes suivantes (VOus devez pouboir executer les commande cmake et make).
+
 ```bash
 cd build/
 cmake ..
@@ -11,4 +12,4 @@ make
 cd main
 ./main
 ```
-Vous pouvez apporter votre contribution à ce projet et me contacter à l'adresse olabijed@gmail.com
+Vous pouvez me contacter à l'adresse olabijed@gmail.com
