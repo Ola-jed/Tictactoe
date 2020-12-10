@@ -37,7 +37,6 @@ int main()
             if (game.checkWinGame() || gr.isFull()) break;
             do
             {
-                std::cout << "L'ordinateur joue " << std::endl;
                 game.turn(2);
                 t = p2.play();
             } while((t.x < 0) || (t.x > 2) || (t.y < 0) || (t.y > 2) || (!game.insert(p2,t)));
