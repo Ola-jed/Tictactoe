@@ -1,5 +1,5 @@
 # Tictactoe
-Pour compiler le programme, exécutez les commandes suivantes (VOus devez pouboir executer les commande cmake et make).
+Pour compiler le programme, exécutez les commandes suivantes (Vous devez pouvoir executer les commandes cmake et make).
 
 ```bash
 git clone https://github.com/Ola-jed/Tictactoe
