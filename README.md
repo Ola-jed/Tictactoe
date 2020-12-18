@@ -6,7 +6,7 @@ Il s'agit d'une verion CLI (Command Line Interface) codée en langage C++ dispos
 Le système cmake est utilisé. Pour compiler le programme, exécutez les commandes suivantes (VOus devez pouboir executer les commande cmake et make).
 
 ```bash
-git clone https://github.com/Ola-jed/Tictactoe/edit/master/README.md
+git clone https://github.com/Ola-jed/Tictactoe
 cd build/
 cmake ..
 make
