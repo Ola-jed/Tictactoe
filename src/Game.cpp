@@ -1,4 +1,3 @@
-// Created by ola on 02/11/2020.
 #include "Game.hpp"
 #include <iostream>
 
@@ -13,7 +12,6 @@ Game::~Game()
     std::cout << "Fin de la partie" << std::endl;
 }
 // Method to check if someone won the game
-// @return bool
 bool Game::checkWinGame() noexcept
 {
     auto const tmp = m_gr.checkWin();
@@ -37,7 +35,6 @@ void Game::resetGame() noexcept
     m_gr.resetGrid();
 }
 // Method to give the hand to a player
-// @param unsigned short int
 void Game::turn(unsigned short p) noexcept
 {
     switch (p)
@@ -55,9 +52,6 @@ void Game::turn(unsigned short p) noexcept
     }
 }
 // Method to insert an element in the grid of the game
-// @param Player
-// @param Point
-// @return bool
 bool Game::insert(const Player &p, const Point &pos) noexcept
 {
     if(!m_gr.isFreeGrid(pos)) return false;
