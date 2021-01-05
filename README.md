@@ -9,4 +9,3 @@ make
 cd main
 ./main
 ```
-Vous pouvez me contacter à l'adresse olabijed@gmail.com
