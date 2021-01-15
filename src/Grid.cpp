@@ -33,37 +33,33 @@ bool Grid::insertInGrid(const Point &p,char toAdd) noexcept
 // @return char
 char Grid::checkWin() const noexcept
 {
-    if ((m_self[0][0] == m_self[0][1]) && (m_self[0][1] == m_self[0][2]))
+    // [0][0]
+    bool firstType  = (m_self[0][0] == m_self[0][1]) && (m_self[0][1] == m_self[0][2]);
+    bool secondType = (m_self[0][0] == m_self[1][0]) && (m_self[1][0] == m_self[2][0]);
+    bool thirdType  = (m_self[0][0] == m_self[1][1]) && (m_self[1][1] == m_self[2][2]);
+    // [1][2]
+    bool fourthType = (m_self[0][2] == m_self[1][2]) && (m_self[1][2] == m_self[2][2]);
+    bool fifthType  = (m_self[1][0] == m_self[1][1]) && (m_self[1][1] == m_self[1][2]);
+    // [2][0]
+    bool sixthType   = (m_self[2][0] == m_self[2][1]) && (m_self[2][1] == m_self[2][2]);
+    bool seventhType = (m_self[2][0] == m_self[1][1]) && (m_self[1][1] == m_self[0][2]);
+    // [0][1]
+    bool eightthType = (m_self[0][1] == m_self[1][1]) && (m_self[1][1] == m_self[2][1]);
+    if (firstType || secondType || thirdType)
     {
         return m_self[0][0];
     }
-    if ((m_self[0][0] == m_self[1][0]) && (m_self[1][0] == m_self[2][0]))
+    if (fourthType || fifthType)
     {
-        return m_self[0][0];
+        return m_self[1][2];
     }
-    if ((m_self[0][0] == m_self[1][1]) && (m_self[1][1] == m_self[2][2]))
-    {
-        return m_self[0][0];
-    }
-    if ((m_self[0][2] == m_self[1][2]) && (m_self[1][2] == m_self[2][2]))
-    {
-        return m_self[0][2];
-    }
-    if ((m_self[1][0] == m_self[1][1]) && (m_self[1][1] == m_self[1][2]))
-    {
-        return m_self[1][0];
-    }
-    if ((m_self[2][0] == m_self[2][1]) && (m_self[2][1] == m_self[2][2]))
+    if (sixthType || seventhType)
     {
         return m_self[2][0];
     }
-    if ((m_self[0][1] == m_self[1][1]) && (m_self[1][1] == m_self[2][1]))
+    if (eightthType)
     {
         return m_self[0][1];
-    }
-    if ((m_self[2][0] == m_self[1][1]) && (m_self[1][1] == m_self[0][2]))
-    {
-        return m_self[2][0];
     }
     return ' ';
 }
