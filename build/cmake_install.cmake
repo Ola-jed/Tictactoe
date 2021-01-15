@@ -1,4 +1,4 @@
-# Install script for directory: /home/ola/Bureau/C++/Tictactoe
+# Install script for directory: /home/ola/Téléchargements/Tictactoe
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ola/Bureau/C++/Tictactoe/build/src/cmake_install.cmake")
-  include("/home/ola/Bureau/C++/Tictactoe/build/main/cmake_install.cmake")
+  include("/home/ola/Téléchargements/Tictactoe/build/src/cmake_install.cmake")
+  include("/home/ola/Téléchargements/Tictactoe/build/main/cmake_install.cmake")
 
 endif()
 
@@ -52,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ola/Bureau/C++/Tictactoe/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ola/Téléchargements/Tictactoe/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

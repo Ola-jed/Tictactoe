@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libProg.so -o libProg.so CMakeFiles/Prog.dir/Point.cpp.o CMakeFiles/Prog.dir/Grid.cpp.o CMakeFiles/Prog.dir/Player.cpp.o CMakeFiles/Prog.dir/IA.cpp.o CMakeFiles/Prog.dir/Game.cpp.o 
