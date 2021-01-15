@@ -5,6 +5,36 @@
 #include "Game.hpp"
 #include "IA.hpp"
 
+void getCoord(Game &game,bool isHuman,const Player &p)
+{
+    Point t;
+    if(isHuman)
+    {
+        do
+        {
+            std::cin >> t.x >> t.y;
+        } while((t.x < 0) || (t.x > 2) || (t.y < 0) || (t.y > 2) || (!game.insert(p,t)));
+    }
+    else
+    {
+        IA ia = static_cast<IA>(p);
+        do
+        {
+            ia.updateTheGrid(game.getGrid());
+            t = ia.play();
+        } while((t.x < 0) || (t.x > 2) || (t.y < 0) || (t.y > 2) || (!game.insert(ia,t)));
+    }
+}
+
+void checkStatus(Game gm,Grid gr)
+{
+    if (gr.isFull() && (!gm.checkWinGame()))
+    {
+        std::cout << "Match nul" << std::endl;
+    }
+}
+
+
 int main()
 {
     std::string tmp{};
@@ -17,75 +47,45 @@ int main()
     if (temp == '1')
     {
         std::cout << "Mode 1 joueur" << std::endl;
-        std::cout << " Joueur 1 : \nEntrer votre nom : " << std::endl;
-        std::cin >> tmp;
-        std::cout << "Choisir votre symbole : " << std::endl;
-        std::cin >> temp;
-        Player p1{tmp,temp};
+        Player p1{1};
         IA p2{gr.getContent(), true};
         Game game{p1,p2,gr};
         Point t;
         while (!gr.isFull() || !game.checkWinGame())
         {
-            do
-            {
-                game.turn(1);
-                std::cout << p1.getName() <<" entrez les coordonnées du point pour placer votre symbole :" << std::endl;
-                std::cin >> t.x >> t.y;
-            } while((t.x < 0) || (t.x > 2) || (t.y < 0) || (t.y > 2) || (!game.insert(p1,t)));
+            game.turn(1);
+            std::cout << p1.getName() <<" entrez les coordonnées du point pour placer votre symbole :" << std::endl;
+            getCoord(game,true,p1);
             gr.printGrid();
+            std::cout << "--------------------------" << std::endl;
             if (game.checkWinGame() || gr.isFull()) break;
-            do
-            {
-                game.turn(2);
-                t = p2.play();
-            } while((t.x < 0) || (t.x > 2) || (t.y < 0) || (t.y > 2) || (!game.insert(p2,t)));
+            game.turn(2);
+            getCoord(game,false,p2);
             gr.printGrid();
             if (game.checkWinGame() || gr.isFull()) break;
         }
-        if (gr.isFull() && (!game.checkWinGame()))
-        {
-            std::cout << "Match nul" << std::endl;
-        }
+        checkStatus(game,gr);
     }
     else
     {
-        std::cout << "Mode 2 joueurs" << std::endl;
-        std::cout << " Joueur 1 : \nEntrer votre nom : " << std::endl;
-        std::cin >> tmp;
-        std::cout << "Choisir votre symbole : " << std::endl;
-        std::cin >> temp;
-        Player p1{tmp,temp};
-        std::cout << " Joueur 2 : \nEntrer votre nom : " << std::endl;
-        std::cin >> tmp;
-        std::cout << "Choisir votre symbole : " << std::endl;
-        std::cin >> temp;
-        Player p2{tmp,temp};
+        Player p1{1};
+        Player p2{2};
         Game game{p1,p2,gr};
         Point t;
         while (!gr.isFull() || !game.checkWinGame())
         {
-            do
-            {
-                game.turn(1);
-                std::cout << p1.getName() <<" entrez les coordonnées du point pour placer votre symbole :" << std::endl;
-                std::cin >> t.x >> t.y;
-            } while((t.x < 0) || (t.x > 2) || (t.y < 0) || (t.y > 2) || (!game.insert(p1,t)));
+            game.turn(1);
+            getCoord(game,true,p1);
             gr.printGrid();
             if (game.checkWinGame() || gr.isFull()) break;
-            do
-            {
-                game.turn(2);
-                std::cout << p2.getName() <<" entrez les coordonnées du point pour placer votre symbole :" << std::endl;
-                std::cin >> t.x >> t.y;
-            } while((t.x < 0) || (t.x > 2) || (t.y < 0) || (t.y > 2) || (!game.insert(p2,t)));
+            game.turn(2);
+            std::cout << p2.getName() <<" entrez les coordonnées du point pour placer votre symbole :" << std::endl;
+            getCoord(game,true,p2);
+            std::cout << "--------------------------" << std::endl;
             gr.printGrid();
             if (game.checkWinGame() || gr.isFull()) break;
         }
-        if (gr.isFull() && (!game.checkWinGame()))
-        {
-            std::cout << "Match nul" << std::endl;
-        }
+        checkStatus(game,gr);
     }
     return 0;
 }

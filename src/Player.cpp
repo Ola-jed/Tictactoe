@@ -2,10 +2,23 @@
 // Created by ola on 02/11/2020.
 #include "Player.hpp"
 #include <iostream>
+Player::Player(int number) noexcept
+{
+    std::cout << " Joueur " << number << ": \nEntrer votre nom : " << std::endl;
+    std::cin >> m_name;
+    std::cout << "Choisir votre symbole : " << std::endl;
+    std::cin >> m_symbol;
+    std::cout << m_name << " a rejoint la partie  " << std::endl;
+}
 Player::Player(const std::string &name, char symbol) noexcept
     :m_name(name),m_symbol(symbol)
 {
     std::cout << name << " a rejoint la partie  " << std::endl;
+}
+Player::Player(const Player &player)
+    :m_name(player.m_name),m_symbol(player.m_symbol)
+{
+    std::cout << player.m_name << " a rejoint la partie  " << std::endl;
 }
 std::string Player::getName() const noexcept
 {

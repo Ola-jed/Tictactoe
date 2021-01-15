@@ -7,6 +7,10 @@
 IA::IA(const std::array<std::array<char, 3>, 3> &gr,bool hardLevel) noexcept
     :Player("IA",'W'),m_thegrid(gr),m_level(hardLevel)
 {}
+IA::IA(const Player &player) noexcept
+    :Player(player),m_level(false),m_thegrid({})
+{}
+
 IA::~IA()
 {}
 // Method to make the ia play

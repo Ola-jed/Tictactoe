@@ -10,9 +10,7 @@ Grid::Grid(const Grid &toCopy)
     :m_self(toCopy.m_self)
 {}
 Grid::~Grid()
-{
-    std::cout << "Destruction de la grille en cours ........." << std::endl;
-}
+{}
 // Method to check if the cell is free
 // @param Point
 // @return bool

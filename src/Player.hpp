@@ -1,4 +1,3 @@
-// Created by ola on 02/11/2020.
 // Class for the players and the services provided to/by the player object
 #ifndef TICTACTOE_PLAYER_H
 #define TICTACTOE_PLAYER_H
@@ -10,7 +9,9 @@ class Player
         char m_symbol;
         bool m_turn{false};
     public:
-        Player(const std::string &name,char symbol) noexcept;
+        Player(int number) noexcept;
+        Player(const std::string &name, char symbol) noexcept;
+        Player(const Player &player);
         std::string getName() const noexcept;
         char getSymbol() const noexcept;
         bool getTurn() const noexcept;

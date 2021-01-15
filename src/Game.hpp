@@ -16,5 +16,6 @@ class Game
         void resetGame() noexcept;
         bool insert(const Player &p,const Point &pos) noexcept;
         void turn(unsigned short int p) noexcept;
+        Grid getGrid() const;
 };
 #endif //TICTACTOE_GAME_H

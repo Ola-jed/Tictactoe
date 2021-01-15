@@ -15,6 +15,7 @@ class IA: public Player
         bool m_level;
     public:
         IA(const std::array<std::array<char,3>,3> &gr,bool hardLevel) noexcept;
+        IA(const Player &player) noexcept;
         ~IA();
         Point play() noexcept;
         void updateTheGrid(const Grid &ngrid) noexcept;
