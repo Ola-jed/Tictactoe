@@ -9,9 +9,7 @@
 class IA: public Player
 {
     protected:
-    IA(const std::array<std::array<char, 3>, 3> &gridToCopy);
-
-    std::array<std::array<char,3>,3> m_thegrid;
+        std::array<std::array<char,3>,3> m_thegrid;
         bool m_level;
     public:
         explicit IA(const std::array<std::array<char,3>,3> &gr,bool hardLevel) noexcept;
