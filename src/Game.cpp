@@ -1,17 +1,18 @@
-// Created by ola on 02/11/2020.
 #include "Game.hpp"
 #include <iostream>
 
-Game::Game(Player &p1, Player &p2, Grid &gr) noexcept
-    :m_p1(p1),m_p2(p2),m_gr(gr)
+Game::Game(Player &player1, Player &player2, Grid &gameGrid) noexcept
+    :m_p1(player1),m_p2(player2),m_gr(gameGrid)
 {
     std::cout << "Début de la partie" << std::endl;
 }
+
 Game::~Game()
 {
     m_gr.resetGrid();
     std::cout << "Fin de la partie" << std::endl;
 }
+
 // Method to check if someone won the game
 // @return bool
 bool Game::checkWinGame() noexcept
@@ -31,11 +32,13 @@ bool Game::checkWinGame() noexcept
     }
     return false;
 }
+
 // Method to reset the game
 void Game::resetGame() noexcept
 {
     m_gr.resetGrid();
 }
+
 // Method to give the hand to a player
 // @param unsigned short int
 void Game::turn(unsigned short p) noexcept
@@ -54,6 +57,7 @@ void Game::turn(unsigned short p) noexcept
             return;
     }
 }
+
 // Method to insert an element in the grid of the game
 // @param Player
 // @param Point

@@ -1,18 +1,19 @@
-// Created by ola on 03/11/2020.
-// Methods of the IA class
 #include "IA.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <stdexcept>
-IA::IA(const std::array<std::array<char, 3>, 3> &gr,bool hardLevel) noexcept
-    :Player("IA",'W'),m_thegrid(gr),m_level(hardLevel)
+
+IA::IA(const std::array<std::array<char, 3>, 3> &gridToCopy,bool hardLevel) noexcept
+    :Player("IA",'W'),m_thegrid(gridToCopy),m_level(hardLevel)
 {}
-IA::IA(const Player &player) noexcept
-    :Player(player),m_level(false),m_thegrid({})
+
+ IA::IA(const Player &playerBase) noexcept
+    :Player(playerBase),m_level(false),m_thegrid({})
 {}
 
 IA::~IA()
 {}
+
 // Method to make the ia play
 // @return Point
 Point IA::play() noexcept
@@ -63,6 +64,7 @@ Point IA::play() noexcept
     }
     return Point({0,0});
 }
+
 // Method to update the copy of the grid owned by the ia
 // @return void
 // @param grid
@@ -70,6 +72,7 @@ void IA::updateTheGrid(const Grid &ngrid) noexcept
 {
     m_thegrid = ngrid.getContent();
 }
+
 // Method to check is the char is for the IA or not
 // @return bool
 // @param char

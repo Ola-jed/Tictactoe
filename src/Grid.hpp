@@ -1,12 +1,13 @@
-// Created by ola on 02/11/2020.
-// Class to store the items of the game, the grid
 #ifndef TICTACTOE_GRID_H
 #define TICTACTOE_GRID_H
+
 #include <array>
 #include "Point.hpp"
+
 /** Au fait les x sont dans le sens vertical du haut vers le bas et les y dans le sens horizontal de la gauche
  * vers la droite (c'est comme ça que les 2d arrays sont et j'allais pas inverser le tout)
 */
+
 class Grid
 {
     private:
