@@ -4,7 +4,8 @@
 #include <array>
 #include "Point.hpp"
 
-/** Au fait les x sont dans le sens vertical du haut vers le bas et les y dans le sens horizontal de la gauche
+/**
+ * Au fait les x sont dans le sens vertical du haut vers le bas et les y dans le sens horizontal de la gauche
  * vers la droite (c'est comme ça que les 2d arrays sont et j'allais pas inverser le tout)
 */
 

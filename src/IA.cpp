@@ -12,7 +12,7 @@ IA::IA(const std::array<std::array<char, 3>, 3> &gridToCopy,bool hardLevel) noex
 {}
 
 IA::~IA()
-{}
+= default;
 
 // Method to make the ia play
 // @return Point

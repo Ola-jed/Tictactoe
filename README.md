@@ -1,9 +1,11 @@
 # Tictactoe
-A console game based on tictactoe.
 
-A one player mode and a two players mode
+Clone de tictactoe en console
 
-### Project setup
+Modes un joueur et deux joueurs
+
+
+### Compilation et exécution
 ```bash
 git clone https://github.com/Ola-jed/Tictactoe
 cd Tictactoe/build/

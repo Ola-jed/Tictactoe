@@ -1,6 +1,6 @@
 add_library(Prog
   SHARED
-  Point.cpp Grid.cpp Player.cpp IA.cpp Game.cpp)
+  Point.cpp Grid.cpp Player.cpp IA.cpp Game.cpp gamemanager.hpp)
 
 install (TARGETS Prog
         DESTINATION lib)

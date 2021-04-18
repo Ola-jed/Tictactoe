@@ -12,7 +12,7 @@ class Game
     public:
         Game(Player &player1,Player &player2,Grid &gameGrid) noexcept;
         ~Game();
-        bool checkWinGame() noexcept;
+        bool checkWinGame() const noexcept;
         void resetGame() noexcept;
         bool insert(const Player &p,const Point &pos) noexcept;
         void turn(unsigned short int p) noexcept;

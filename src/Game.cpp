@@ -15,7 +15,7 @@ Game::~Game()
 
 // Method to check if someone won the game
 // @return bool
-bool Game::checkWinGame() noexcept
+bool Game::checkWinGame() const noexcept
 {
     auto const tmp = m_gr.checkWin();
     bool p1 = (tmp == m_p1.getSymbol());
