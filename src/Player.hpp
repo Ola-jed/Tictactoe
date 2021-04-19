@@ -8,6 +8,7 @@ class Player
         std::string m_name;
         char m_symbol;
         bool m_turn{false};
+
     public:
         explicit Player(int playerId) noexcept;
         Player(const std::string &name, char symbol) noexcept;

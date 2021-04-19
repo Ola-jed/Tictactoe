@@ -5,14 +5,16 @@
 #include "Point.hpp"
 
 /**
- * Au fait les x sont dans le sens vertical du haut vers le bas et les y dans le sens horizontal de la gauche
- * vers la droite (c'est comme ça que les 2d arrays sont et j'allais pas inverser le tout)
+ * Btw, the x's are in the vertical direction from top to bottom
+ * the y's in the horizontal direction from left to the right
+ * (that's how the 2d arrays are and I wasn't going to reverse it)
 */
 
 class Grid
 {
     private:
         std::array<std::array<char,3>,3> m_self;
+
     public:
         Grid() noexcept;
         Grid(const Grid &toCopy);

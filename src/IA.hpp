@@ -8,9 +8,11 @@
 
 class IA: public Player
 {
-    protected:
+    private:
         std::array<std::array<char,3>,3> m_thegrid;
         bool m_level;
+        static constexpr char IA_SYMBOL = 'X';
+
     public:
         explicit IA(const std::array<std::array<char,3>,3> &gr,bool hardLevel) noexcept;
         explicit IA(const Player &playerBase) noexcept;

@@ -31,7 +31,7 @@ void checkStatus(const Game &gm,const Grid& gr)
 {
     if (gr.isFull() && (!gm.checkWinGame()))
     {
-        std::cout << "Match nul" << std::endl;
+        std::cout << "Tied game" << std::endl;
     }
 }
 

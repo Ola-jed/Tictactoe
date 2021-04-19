@@ -22,12 +22,12 @@ bool Game::checkWinGame() const noexcept
     bool p2 = (tmp == m_p2.getSymbol());
     if(p1)
     {
-        std::cout << m_p1.getName() << " a gagné la partie" << std::endl;
+        std::cout << m_p1.getName() << " won" << std::endl;
         return p1;
     }
     if(p2)
     {
-        std::cout << m_p2.getName() << " a gagné la partie" << std::endl;
+        std::cout << m_p2.getName() << " won" << std::endl;
         return p2;
     }
     return false;

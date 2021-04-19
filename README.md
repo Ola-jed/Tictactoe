@@ -1,15 +1,16 @@
 # Tictactoe
 
-Clone de tictactoe en console
+CLI tictactoe like
 
-Modes un joueur et deux joueurs
+1P and 2P modes
 
 
-### Compilation et exécution
+### Project setup
 ```bash
 git clone https://github.com/Ola-jed/Tictactoe
 cd Tictactoe/build/
 cmake ..
 make
+# Run
 main/main
 ```
