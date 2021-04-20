@@ -3,7 +3,7 @@
 
 Player::Player(int playerId) noexcept
 {
-    std::cout << " Player " << playerId << ": \nEnter your name : " << std::endl;
+    std::cout << "Player " << playerId << ": \nEnter your name : " << std::endl;
     std::cin >> m_name;
     std::cout << "Choose symbol : " << std::endl;
     std::cin >> m_symbol;
@@ -13,13 +13,13 @@ Player::Player(int playerId) noexcept
 Player::Player(const std::string &name, char symbol) noexcept
     :m_name(name),m_symbol(symbol)
 {
-    std::cout << name << " joined the game  " << std::endl;
+    std::cout << name << " joined the game\n";
 }
 
 Player::Player(const Player &player)
     :m_name(player.m_name),m_symbol(player.m_symbol)
 {
-    std::cout << player.m_name << " joined the game  " << std::endl;
+    std::cout << player.m_name << " joined the game\n";
 }
 
 std::string Player::getName() const noexcept

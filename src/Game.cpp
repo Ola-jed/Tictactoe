@@ -4,13 +4,12 @@
 Game::Game(Player &player1, Player &player2, Grid &gameGrid) noexcept
     :m_p1(player1),m_p2(player2),m_gr(gameGrid)
 {
-    std::cout << "Début de la partie" << std::endl;
+    std::cout << "Start of the game\n";
 }
 
 Game::~Game()
 {
-    m_gr.resetGrid();
-    std::cout << "Fin de la partie" << std::endl;
+    std::cout << "End of the game\n";
 }
 
 // Method to check if someone won the game
@@ -22,12 +21,12 @@ bool Game::checkWinGame() const noexcept
     bool p2 = (tmp == m_p2.getSymbol());
     if(p1)
     {
-        std::cout << m_p1.getName() << " won" << std::endl;
+        std::cout << m_p1.getName() << " won\n";
         return p1;
     }
     if(p2)
     {
-        std::cout << m_p2.getName() << " won" << std::endl;
+        std::cout << m_p2.getName() << " won\n";
         return p2;
     }
     return false;
