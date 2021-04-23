@@ -1,5 +1,6 @@
 #include "Grid.hpp"
 #include <iostream>
+
 Grid::Grid() noexcept
 {
     std::cout << "Construction de la grille en cours .........." << std::endl;
